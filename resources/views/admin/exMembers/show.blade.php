@@ -130,6 +130,9 @@
                 <a class="btn btn-default" href="{{ route('admin.ex-members.index') }}">
                     {{ trans('global.back_to_list') }}
                 </a>
+                <a class="btn btn-primary"  target="_blank" href="{{ route('admin.ex-members.print', $exMember->id) }}">
+                                        Print
+                                    </a>
             </div>
         </div>
     </div>

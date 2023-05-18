@@ -11,6 +11,7 @@ use App\Models\User;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ExMemberController extends Controller
 {
@@ -67,5 +68,18 @@ class ExMemberController extends Controller
         $exMember->load('user', 'created_by');
 
         return view('admin.exMembers.show', compact('exMember'));
+    }
+    public function print(ExMember $exMember)
+    {
+       $id=33;
+       return view('admin.exMembers.print', compact('id'));
+       $data = [
+        'id' => 33,
+        'date' => date('m/d/Y')
+    ];
+      
+    $pdf = PDF::loadView('admin.exMembers.print', $data);
+
+    return $pdf->download('voucher.pdf');
     }
 }

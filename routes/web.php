@@ -26,6 +26,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('users', 'UsersController');
 
     // Ex Member
+    Route::get('ex-members/print/{id}', 'ExMemberController@print')->name('ex-members.print');
     Route::post('ex-members/parse-csv-import', 'ExMemberController@parseCsvImport')->name('ex-members.parseCsvImport');
     Route::post('ex-members/process-csv-import', 'ExMemberController@processCsvImport')->name('ex-members.processCsvImport');
     Route::resource('ex-members', 'ExMemberController', ['except' => ['destroy']]);
