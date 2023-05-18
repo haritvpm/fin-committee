@@ -34,6 +34,7 @@ class ExMember extends Model
         'amount_payable',
         'amount_paid',
         'actual_amount_paid',
+        'amount_words',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -42,11 +43,12 @@ class ExMember extends Model
 
     protected $appends = ['distance_total'];
 
+   
     public function getDistanceTotalAttribute()
     {
         return $this->distance_oneside *2;
     }
-
+  
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');

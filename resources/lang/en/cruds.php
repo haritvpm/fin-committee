@@ -105,6 +105,7 @@ return [
             'created_by_helper'       => ' ',
             'actual_amount_paid'        => 'Actual Amount Paid',
             'actual_amount_paid_helper' => ' ',
+            'amount_words'  => 'Amount(Words)',
         ],
     ],
     'allocation' => [

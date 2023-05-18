@@ -69,17 +69,18 @@ class ExMemberController extends Controller
 
         return view('admin.exMembers.show', compact('exMember'));
     }
-    public function print(ExMember $exMember)
+    public function print(Request $request)
     {
-       $id=33;
-       return view('admin.exMembers.print', compact('id'));
+       $exMember = ExMember::FindOrFail($request->id);
+       $exMember->load('user', 'created_by');
+       return view('admin.exMembers.print', compact('exMember'));
        $data = [
         'id' => 33,
         'date' => date('m/d/Y')
-    ];
+        ];
       
-    $pdf = PDF::loadView('admin.exMembers.print', $data);
+    //$pdf = PDF::loadView('admin.exMembers.print', $data);
 
-    return $pdf->download('voucher.pdf');
+    //return $pdf->download('voucher.pdf');
     }
 }

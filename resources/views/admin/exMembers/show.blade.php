@@ -113,26 +113,47 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.exMember.fields.actual_amount_paid') }}
+                        </th>
+                        <td>
+                            {{ $exMember->actual_amount_paid }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.exMember.fields.amount_words') }}
+                        </th>
+                        <td>
+                            {{ $exMember->amount_words }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.exMember.fields.amount_paid') }}
                         </th>
                         <td>
                              {{ $exMember->amount_paid ? 'YES' : 'NO' }}
                         </td>
                     </tr>
+
                 </tbody>
             </table>
             <div class="form-group">
+            <a class="btn btn-default" href="{{ route('admin.ex-members.index') }}">
+                    {{ trans('global.back_to_list') }}
+                </a>
             @can('ex_member_edit')
                                     <a class="btn btn-info" href="{{ route('admin.ex-members.edit', $exMember->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
                                 @endcan
-                <a class="btn btn-default" href="{{ route('admin.ex-members.index') }}">
-                    {{ trans('global.back_to_list') }}
-                </a>
+             
+                @if ($exMember->amount_paid)
                 <a class="btn btn-primary"  target="_blank" href="{{ route('admin.ex-members.print', $exMember->id) }}">
                                         Print
                                     </a>
+                @endif
+                
             </div>
         </div>
     </div>

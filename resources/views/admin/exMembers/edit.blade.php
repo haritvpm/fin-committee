@@ -112,7 +112,7 @@
                 <div class="col">
                 <div class="form-group">
                             <label for="distance_2side">Total Distance</label>
-                            <input readonly class="form-control type="number" name="distance_total" value="{{ old('distance_total', $exMember->distance_total) }}" step="1">
+                            <input readonly class="form-control type="number" name="distance_total" id='distance_total' value="{{ old('distance_total', $exMember->distance_total) }}" step="1">
                          
                         </div>
                 
@@ -167,9 +167,19 @@
             <div class="form-group">
                 <label for="actual_amount_paid">Actual Amount Paid</label>
                 <input class="form-control {{ $errors->has('actual_amount_paid') ? 'is-invalid' : '' }}" type="number" name="actual_amount_paid" id="actual_amount_paid" value="{{ old('actual_amount_paid', $exMember->actual_amount_paid) }}" step="0.01">
-                             
             </div>
-       
+            <div class="form-group">
+                <label for="amount_words">{{ trans('cruds.exMember.fields.amount_words') }}</label>
+                <input class="form-control {{ $errors->has('amount_words') ? 'is-invalid' : '' }}" type="text" name="amount_words" id="amount_words" value="{{ old('amount_words', $exMember->amount_words) }}">
+                @if($errors->has('amount_words'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('amount_words') }}
+                    </div>
+                @endif
+               
+            </div>
+            
+
             <div class="form-group">
                 <div class="form-check {{ $errors->has('amount_paid') ? 'is-invalid' : '' }}">
                     <input type="hidden" name="amount_paid" value="0">
@@ -184,22 +194,52 @@
                 <span class="help-block">{{ trans('cruds.exMember.fields.amount_paid_helper') }}</span>
             </div>
 
+
+
+
             <div class="form-group">
               
 
+                <a class="btn btn-primary" href="{{ route('admin.ex-members.show', $exMember->id) }}">
+                                       Cancel
+                                    </a>
+
+                                    
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
                 </button>
 
-                <a class="btn btn-primary" href="{{ route('admin.ex-members.show', $exMember->id) }}">
-                                        {{ trans('global.view') }}
-                                    </a>
 
             </div>
         </form>
     </div>
 </div>
 
+@endsection
+@section('scripts')
+@parent
+<script type="text/javascript">
+$(document).ready(function()
+{
+    function updatePrice()
+    {
+        var km = parseFloat($("#distance_oneside").val());
+        var total = (km ) * 2;
+        var total = total.toFixed(1);
+        var ta_cal = total * 10;
+        
+        var ta_eli = Math.max(1000, total * 10);
+        var amount = ta_eli + 2500 ;
 
+        $("#distance_total").val(total);
+        $("#ta_calculated").val(ta_cal);
+        $("#ta_eligible").val(ta_eli);
+        $("#amount_payable").val(amount);
+        $("#amount_words").val('');
+                                
+    }
+    $(document).on("change, keyup", "#distance_oneside", updatePrice);
+});
 
+</script>
 @endsection

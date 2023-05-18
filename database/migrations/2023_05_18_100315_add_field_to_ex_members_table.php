@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::table('ex_members', function (Blueprint $table) {
             $table->decimal('actual_amount_paid', 15, 2)->nullable();
+            $table->string('amount_words');
+
         });
     }
 
