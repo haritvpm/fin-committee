@@ -11,8 +11,7 @@
 }
 
 body {
-  font-family: 'Rachana-Regular';
-  font-size: 14px;
+  
   line-height: 1.2;
 }
 
@@ -56,11 +55,11 @@ IFSC Code			:<br>
 ഒപ്പ് :&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<br>   <br>                
 തീയതി : 22/05/2023 <br>                   
 </div>
-<br>
+
 <hr>
 <br>
-<div class="center">
-For Office Use</div> <br>
+<div class="center"><b>
+For Office Use</b></div> <br>
 
 Journey From				:<br><br>
 
@@ -72,15 +71,13 @@ Honorarium					:<br><br>
 
 Total						:<br><br>
 
-TA & Honorarium Sanctioned		:<br><br><br>
+TA & Honorarium Sanctioned		:<br><br>
 
 <div> Name and Designation of the sanctioning authority                   
 <span class="right" >Finance Officer</span></div>
-<br>
 <hr>
 <br>
-Received  Rs. ……………  /-                        Rupees ……………………………
-…………………...Only as TA & Honorarium.<br><br><br>
+Received  Rs. ……………  /-   (Rupees ………………………………………………...Only) as TA and Honorarium.<br><br>
 
 Name and Signature of dignitary
 

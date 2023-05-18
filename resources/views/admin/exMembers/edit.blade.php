@@ -28,7 +28,7 @@
                     <div class="form-group">
                             <label class="required" for="user_id">{{ trans('cruds.exMember.fields.user') }}</label>
                             
-                            <select class="form-control select2 {{ $errors->has('user') ? 'is-invalid' : '' }}" name="user_id" id="user_id" required>
+                            <select class="form-control  {{ $errors->has('user') ? 'is-invalid' : '' }}" name="user_id" id="user_id" required>
                                 @foreach($users as $id => $entry)
                                     <option value="{{ $id }}" {{ (old('user_id') ? old('user_id') : $exMember->user->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
                                 @endforeach
@@ -164,7 +164,11 @@
 
             </div>
 
-           
+            <div class="form-group">
+                <label for="actual_amount_paid">Actual Amount Paid</label>
+                <input class="form-control {{ $errors->has('actual_amount_paid') ? 'is-invalid' : '' }}" type="number" name="actual_amount_paid" id="actual_amount_paid" value="{{ old('actual_amount_paid', $exMember->actual_amount_paid) }}" step="0.01">
+                             
+            </div>
        
             <div class="form-group">
                 <div class="form-check {{ $errors->has('amount_paid') ? 'is-invalid' : '' }}">

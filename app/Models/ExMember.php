@@ -33,6 +33,7 @@ class ExMember extends Model
         'honorarium',
         'amount_payable',
         'amount_paid',
+        'actual_amount_paid',
         'created_at',
         'updated_at',
         'deleted_at',
