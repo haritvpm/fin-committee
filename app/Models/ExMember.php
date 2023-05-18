@@ -39,6 +39,13 @@ class ExMember extends Model
         'created_by_id',
     ];
 
+    protected $appends = ['distance_total'];
+
+    public function getDistanceTotalAttribute()
+    {
+        return $this->distance_oneside *2;
+    }
+
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');

@@ -23,12 +23,12 @@
             <table class=" table table-bordered table-striped table-hover datatable datatable-ExMember">
                 <thead>
                     <tr>
-                        <th width="10">
+                      <!--   <th width="10">
 
-                        </th>
-                        <th>
+                        </th> -->
+                      <!--   <th>
                             {{ trans('cruds.exMember.fields.id') }}
-                        </th>
+                        </th> -->
                         <th>
                             {{ trans('cruds.exMember.fields.index') }}
                         </th>
@@ -73,12 +73,12 @@
                 <tbody>
                     @foreach($exMembers as $key => $exMember)
                         <tr data-entry-id="{{ $exMember->id }}">
-                            <td>
+                          <!--   <td>
 
-                            </td>
-                            <td>
+                            </td> -->
+                           <!--  <td>
                                 {{ $exMember->id ?? '' }}
-                            </td>
+                            </td> -->
                             <td>
                                 {{ $exMember->index ?? '' }}
                             </td>
@@ -151,10 +151,15 @@
   
   $.extend(true, $.fn.dataTable.defaults, {
     orderCellsTop: true,
-    order: [[ 1, 'desc' ]],
+    order: [[ 0, 'asc' ]],
     pageLength: 100,
   });
-  let table = $('.datatable-ExMember:not(.ajaxTable)').DataTable({ buttons: dtButtons })
+  let table = $('.datatable-ExMember:not(.ajaxTable)').DataTable({ buttons: dtButtons,  
+    "columnDefs": [ {
+            "targets": [2,5,6,7,8,9,10,11],
+            "searchable": false
+            } ] })
+
   $('a[data-toggle="tab"]').on('shown.bs.tab click', function(e){
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
