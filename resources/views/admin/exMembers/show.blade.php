@@ -15,14 +15,14 @@
             </div>
             <table class="table table-bordered table-striped">
                 <tbody>
-                    <tr>
+                   <!--  <tr>
                         <th>
                             {{ trans('cruds.exMember.fields.id') }}
                         </th>
                         <td>
                             {{ $exMember->id }}
                         </td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <th>
                             {{ trans('cruds.exMember.fields.index') }}
@@ -116,12 +116,17 @@
                             {{ trans('cruds.exMember.fields.amount_paid') }}
                         </th>
                         <td>
-                            <input type="checkbox" disabled="disabled" {{ $exMember->amount_paid ? 'checked' : '' }}>
+                             {{ $exMember->amount_paid ? 'YES' : 'NO' }}
                         </td>
                     </tr>
                 </tbody>
             </table>
             <div class="form-group">
+            @can('ex_member_edit')
+                                    <a class="btn btn-info" href="{{ route('admin.ex-members.edit', $exMember->id) }}">
+                                        {{ trans('global.edit') }}
+                                    </a>
+                                @endcan
                 <a class="btn btn-default" href="{{ route('admin.ex-members.index') }}">
                     {{ trans('global.back_to_list') }}
                 </a>

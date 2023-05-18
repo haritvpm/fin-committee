@@ -20,7 +20,7 @@
 
     <div class="card-body">
         <div class="table-responsive">
-            <table class=" table table-bordered table-striped table-hover datatable datatable-ExMember">
+            <table class="table table-bordered table-striped table-hover datatable datatable-ExMember">
                 <thead>
                     <tr>
                       <!--   <th width="10">
@@ -35,9 +35,9 @@
                         <th>
                             {{ trans('cruds.exMember.fields.name') }}
                         </th>
-                        <th>
+                       <!--  <th>
                             {{ trans('cruds.exMember.fields.address') }}
-                        </th>
+                        </th> -->
                         <th>
                             {{ trans('cruds.exMember.fields.place') }}
                         </th>
@@ -50,15 +50,15 @@
                         <th>
                             {{ trans('cruds.exMember.fields.distance_oneside') }}
                         </th>
-                        <th>
+                       <!--  <th>
                             {{ trans('cruds.exMember.fields.ta_calculated') }}
-                        </th>
+                        </th> -->
                         <th>
                             {{ trans('cruds.exMember.fields.ta_eligible') }}
                         </th>
-                        <th>
+                       <!--  <th>
                             {{ trans('cruds.exMember.fields.honorarium') }}
-                        </th>
+                        </th> -->
                         <th>
                             {{ trans('cruds.exMember.fields.amount_payable') }}
                         </th>
@@ -85,9 +85,9 @@
                             <td>
                                 {{ $exMember->name ?? '' }}
                             </td>
-                            <td>
+                            <!-- <td>
                                 {{ $exMember->address ?? '' }}
-                            </td>
+                            </td> -->
                             <td>
                                 {{ $exMember->place ?? '' }}
                             </td>
@@ -100,34 +100,33 @@
                             <td>
                                 {{ $exMember->distance_oneside ?? '' }}
                             </td>
-                            <td>
+                           <!--  <td>
                                 {{ $exMember->ta_calculated ?? '' }}
-                            </td>
+                            </td> -->
                             <td>
                                 {{ $exMember->ta_eligible ?? '' }}
                             </td>
-                            <td>
+                           <!--  <td>
                                 {{ $exMember->honorarium ?? '' }}
-                            </td>
+                            </td> -->
                             <td>
                                 {{ $exMember->amount_payable ?? '' }}
                             </td>
                             <td>
-                                <span style="display:none">{{ $exMember->amount_paid ?? '' }}</span>
-                                <input type="checkbox" disabled="disabled" {{ $exMember->amount_paid ? 'checked' : '' }}>
+                            {{ $exMember->amount_paid ? 'YES' : 'NO' }}
                             </td>
                             <td>
                                 @can('ex_member_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.ex-members.show', $exMember->id) }}">
+                                    <a class="btn btn-primary" href="{{ route('admin.ex-members.show', $exMember->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
-                                @can('ex_member_edit')
+                               <!--  @can('ex_member_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.ex-members.edit', $exMember->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
-                                @endcan
+                                @endcan -->
 
 
                             </td>
@@ -156,7 +155,7 @@
   });
   let table = $('.datatable-ExMember:not(.ajaxTable)').DataTable({ buttons: dtButtons,  
     "columnDefs": [ {
-            "targets": [2,5,6,7,8,9,10,11],
+            "targets": [2,5,6,7,8,9],
             "searchable": false
             } ] })
 

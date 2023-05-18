@@ -71,7 +71,7 @@ return [
         'fields'         => [
             'id'                      => 'ID',
             'id_helper'               => ' ',
-            'index'                   => 'Index',
+            'index'                   => 'Sl',
             'index_helper'            => ' ',
             'name'                    => 'Name',
             'name_helper'             => ' ',
@@ -99,7 +99,7 @@ return [
             'honorarium_helper'       => ' ',
             'amount_payable'          => 'Amount Payable',
             'amount_payable_helper'   => ' ',
-            'amount_paid'             => 'Amount Paid',
+            'amount_paid'             => 'Paid?',
             'amount_paid_helper'      => ' ',
             'created_by'              => 'Created By',
             'created_by_helper'       => ' ',

@@ -56,7 +56,8 @@ class ExMemberController extends Controller
     {
         $exMember->update($request->all());
 
-        return redirect()->route('admin.ex-members.index');
+        //return redirect()->route('admin.ex-members.index');
+        return view('admin.exMembers.show', compact('exMember'));
     }
 
     public function show(ExMember $exMember)

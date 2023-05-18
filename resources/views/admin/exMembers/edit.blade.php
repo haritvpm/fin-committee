@@ -12,7 +12,7 @@
             @csrf
             <div class="form-group">
                 <label class="required" for="index">{{ trans('cruds.exMember.fields.index') }}</label>
-                <input class="form-control {{ $errors->has('index') ? 'is-invalid' : '' }}" type="number" name="index" id="index" value="{{ old('index', $exMember->index) }}" step="1" required>
+                <input readonly class="form-control {{ $errors->has('index') ? 'is-invalid' : '' }}" type="number" name="index" id="index" value="{{ old('index', $exMember->index) }}" step="1" required>
                 @if($errors->has('index'))
                     <div class="invalid-feedback">
                         {{ $errors->first('index') }}
@@ -62,7 +62,7 @@
             </div>
             <div class="form-group">
                 <label class="required" for="user_id">{{ trans('cruds.exMember.fields.user') }}</label>
-                <select class="form-control select2 {{ $errors->has('user') ? 'is-invalid' : '' }}" name="user_id" id="user_id" required>
+                  <select  class="form-control select2 {{ $errors->has('user') ? 'is-invalid' : '' }}" name="user_id" id="user_id" required>
                     @foreach($users as $id => $entry)
                         <option value="{{ $id }}" {{ (old('user_id') ? old('user_id') : $exMember->user->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
                     @endforeach
@@ -108,9 +108,16 @@
                 <span class="help-block">{{ trans('cruds.exMember.fields.amount_paid_helper') }}</span>
             </div>
             <div class="form-group">
+              
+
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
                 </button>
+
+                <a class="btn btn-primary" href="{{ route('admin.ex-members.show', $exMember->id) }}">
+                                        {{ trans('global.view') }}
+                                    </a>
+
             </div>
         </form>
     </div>
