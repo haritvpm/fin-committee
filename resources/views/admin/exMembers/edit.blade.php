@@ -112,7 +112,7 @@
                 <div class="col">
                 <div class="form-group">
                             <label for="distance_2side">Total Distance</label>
-                            <input readonly class="form-control type="number" name="distance_total" id='distance_total' value="{{ old('distance_total', $exMember->distance_total) }}" step="1">
+                            <input class="form-control type="number" name="distance_total" id='distance_total' value="{{ old('distance_total', $exMember->distance_total) }}" step="1">
                          
                         </div>
                 
@@ -124,14 +124,14 @@
                 <div class="col">
                 <div class="form-group">
                             <label for="ta_calculated">{{ trans('cruds.exMember.fields.ta_calculated') }}</label>
-                            <input readonly class="form-control {{ $errors->has('ta_calculated') ? 'is-invalid' : '' }}" type="number" name="ta_calculated" id="ta_calculated" value="{{ old('ta_calculated', $exMember->ta_calculated) }}" step="0.01">
+                            <input  class="form-control {{ $errors->has('ta_calculated') ? 'is-invalid' : '' }}" type="number" name="ta_calculated" id="ta_calculated" value="{{ old('ta_calculated', $exMember->ta_calculated) }}" step="0.01">
                             
                         </div>
                 </div>
                 <div class="col">
                 <div class="form-group">
                             <label for="ta_eligible">{{ trans('cruds.exMember.fields.ta_eligible') }}</label>
-                            <input readonly class="form-control {{ $errors->has('ta_eligible') ? 'is-invalid' : '' }}" type="number" name="ta_eligible" id="ta_eligible" value="{{ old('ta_eligible', $exMember->ta_eligible) }}" step="0.01">
+                            <input class="form-control {{ $errors->has('ta_eligible') ? 'is-invalid' : '' }}" type="number" name="ta_eligible" id="ta_eligible" value="{{ old('ta_eligible', $exMember->ta_eligible) }}" step="0.01">
                         
                         </div>
                 </div>
@@ -139,7 +139,7 @@
                 
                 <div class="form-group">
                             <label for="honorarium">{{ trans('cruds.exMember.fields.honorarium') }}</label>
-                            <input readonly class="form-control {{ $errors->has('honorarium') ? 'is-invalid' : '' }}" type="number" name="honorarium" id="honorarium" value="{{ old('honorarium', $exMember->honorarium) }}" step="0.01">
+                            <input  class="form-control {{ $errors->has('honorarium') ? 'is-invalid' : '' }}" type="number" name="honorarium" id="honorarium" value="{{ old('honorarium', $exMember->honorarium) }}" step="0.01">
                             @if($errors->has('honorarium'))
                                 <div class="invalid-feedback">
                                     {{ $errors->first('honorarium') }}
@@ -152,7 +152,7 @@
                 <div class="col">
                 <div class="form-group">
                 <label for="amount_payable">{{ trans('cruds.exMember.fields.amount_payable') }}</label>
-                <input readonly class="form-control {{ $errors->has('amount_payable') ? 'is-invalid' : '' }}" type="number" name="amount_payable" id="amount_payable" value="{{ old('amount_payable', $exMember->amount_payable) }}" step="0.01">
+                <input class="form-control {{ $errors->has('amount_payable') ? 'is-invalid' : '' }}" type="number" name="amount_payable" id="amount_payable" value="{{ old('amount_payable', $exMember->amount_payable) }}" step="0.01">
                 @if($errors->has('amount_payable'))
                     <div class="invalid-feedback">
                         {{ $errors->first('amount_payable') }}

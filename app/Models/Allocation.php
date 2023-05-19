@@ -26,7 +26,24 @@ class Allocation extends Model
         'updated_at',
         'deleted_at',
     ];
+    protected $appends = ['expenditure', 'mla_count', 'balance'];
 
+    public function getExpenditureAttribute()
+    {
+        $sum = ExMember::where( 'user_id', $this->user_id )->where( 'amount_paid', '<>', 0 )->sum('amount_payable');
+        return $sum ;
+    }
+    public function getMlaCountAttribute()
+    {
+        $mlas = ExMember::where( 'user_id', $this->user_id )->where( 'amount_paid', '<>', 0 )->count();
+
+        return $mlas;
+    }
+    public function getBalanceAttribute()
+    {
+        
+        return $this->allotted_amount - $this->expenditure;
+    }
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');

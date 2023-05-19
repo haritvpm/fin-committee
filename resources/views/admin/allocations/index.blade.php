@@ -32,6 +32,15 @@
                             {{ trans('cruds.allocation.fields.allotted_amount') }}
                         </th>
                         <th>
+                            Expenditure
+                        </th>
+                        <th>
+                            Balance
+                        </th>
+                        <th>
+                            Delegates Paid
+                        </th>
+                        <th>
                             &nbsp;
                         </th>
                     </tr>
@@ -50,6 +59,15 @@
                             </td>
                             <td>
                                 {{ $allocation->allotted_amount ?? '' }}
+                            </td>
+                            <td>
+                                {{ $allocation->expenditure ?? '' }}
+                            </td>
+                            <td>
+                                {{ $allocation->balance ?? '' }}
+                            </td>
+                            <td>
+                                {{ $allocation->mla_count ?? '' }}
                             </td>
                             <td>
                                 @can('allocation_show')
@@ -122,7 +140,7 @@
 
   $.extend(true, $.fn.dataTable.defaults, {
     orderCellsTop: true,
-    order: [[ 1, 'desc' ]],
+    order: [[ 1, 'asc' ]],
     pageLength: 100,
   });
   let table = $('.datatable-Allocation:not(.ajaxTable)').DataTable({ buttons: dtButtons })

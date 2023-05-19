@@ -95,14 +95,14 @@
                             {{ $exMember->amount_payable }}
                         </td>
                     </tr>
-                    <tr>
+                  <!--   <tr>
                         <th>
                             {{ trans('cruds.exMember.fields.actual_amount_paid') }}
                         </th>
                         <td>
                             {{ $exMember->actual_amount_paid }}
                         </td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <th>
                             {{ trans('cruds.exMember.fields.amount_words') }}
