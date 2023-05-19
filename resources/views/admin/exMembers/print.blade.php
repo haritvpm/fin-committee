@@ -39,7 +39,7 @@ body, table {
 </head>
 <body onload="loadPrint()">
 <br>
-<h2 class="center"> <u> യാത്രാബത്തയ്ക്കുള്ള അപേക്ഷ</u></h2><br>
+<h4 class="center"> <u> യാത്രാബത്തയ്ക്കുള്ള അപേക്ഷ</u></h4><br>
 
 <table class="table table-borderless">
     <tbody>
