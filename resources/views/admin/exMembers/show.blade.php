@@ -77,7 +77,7 @@
                             {{ trans('cruds.exMember.fields.ta_calculated') }}
                         </th>
                         <td>
-                            {{ $exMember->ta_calculated }}
+                            {{ (int)$exMember->ta_calculated }}
                         </td>
                     </tr>
                     <tr>
@@ -85,7 +85,7 @@
                             {{ trans('cruds.exMember.fields.ta_eligible') }}
                         </th>
                         <td>
-                            {{ $exMember->ta_eligible }}
+                            {{ (int)$exMember->ta_eligible }}
                         </td>
                     </tr>
                     <tr>
@@ -93,7 +93,7 @@
                             {{ trans('cruds.exMember.fields.honorarium') }}
                         </th>
                         <td>
-                            {{ $exMember->honorarium }}
+                            {{ (int)$exMember->honorarium }}
                         </td>
                     </tr>
                     <tr>
@@ -101,7 +101,7 @@
                             {{ trans('cruds.exMember.fields.amount_payable') }}
                         </th>
                         <td>
-                            {{ $exMember->amount_payable }}
+                            {{ (int)$exMember->amount_payable }}
                         </td>
                     </tr>
                   <!--   <tr>
