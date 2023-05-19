@@ -62,9 +62,9 @@
                         <th >
                             {{ trans('cruds.exMember.fields.amount_paid') }}
                         </th>
-                        <th>
+                       <!--  <th>
                             {{ trans('cruds.exMember.fields.actual_amount_paid') }}
-                        </th>
+                        </th> -->
                        
                       
                         <th>
@@ -117,9 +117,9 @@
                             <td>
                             {{ $exMember->amount_paid ? 'YES' : 'NO' }}
                             </td>
-                            <td>
+                           <!--  <td>
                                 {{ $exMember->actual_amount_paid ?? '' }}
-                            </td>
+                            </td> -->
                             <td>
                                 @can('ex_member_show')
                                     <a class="btn btn-primary" href="{{ route('admin.ex-members.show', $exMember->id) }}">

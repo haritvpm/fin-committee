@@ -94,30 +94,30 @@ body, table {
         <td></td>
       </tr>
       <tr>
-        <td>Distance (KM)</td>
+        <td>Distance</td>
         
-        <td  class="text-md-left">:  {{ $exMember->distance_total }}</td>
+        <td  class="text-md-left">:  {{ $exMember->distance_total }} KM</td>
       </tr>
       
       <tr>
         <td>TA (up and down)</td>
         
-        <td class="text-md-left">:  {{ (int) $exMember->ta_eligible }} </td>
+        <td class="text-md-left">: ₹ {{ (int) $exMember->ta_eligible }} </td>
       </tr>
       <tr>
         <td>Honorarium</td>
         
-        <td class="text-md-left">:  {{(int) $exMember->honorarium }}</td>
+        <td class="text-md-left">: ₹ {{(int) $exMember->honorarium }}</td>
       </tr>
       <tr>
         <td>Total</td>
         
-        <td class="text-md-left">:  {{ (int) $exMember->amount_payable}}</td>
+        <td class="text-md-left">: ₹ {{ (int) $exMember->amount_payable}}</td>
       </tr>
       <tr>
         <td>TA & Honorarium Sanctioned</td>
         
-        <td class="text-md-left">:  {{ (int) $exMember->amount_payable}}</td>
+        <td class="text-md-left">: ₹ {{ (int) $exMember->amount_payable}}</td>
       </tr>
     </tbody>
   </table>
@@ -127,7 +127,7 @@ body, table {
 <span class="right" >Finance Officer</span></div>
 <hr>
 <br>
-Received  Rs. {{ (int) $exMember->amount_payable}} /-  ({{ $exMember->amount_words}}) as TA and Honorarium.<br><br>
+Received  ₹ {{ (int) $exMember->amount_payable}} /-  ({{ $exMember->amount_words}}) as TA and Honorarium.<br><br>
 
 Name and Signature of dignitary
 

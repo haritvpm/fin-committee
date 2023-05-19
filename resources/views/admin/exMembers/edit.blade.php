@@ -164,10 +164,10 @@
 
             </div>
 
-            <div class="form-group">
+          <!--   <div class="form-group">
                 <label for="actual_amount_paid">Actual Amount Paid</label>
                 <input class="form-control {{ $errors->has('actual_amount_paid') ? 'is-invalid' : '' }}" type="number" name="actual_amount_paid" id="actual_amount_paid" value="{{ old('actual_amount_paid', $exMember->actual_amount_paid) }}" step="0.01">
-            </div>
+            </div> -->
             <div class="form-group">
                 <label for="amount_words">{{ trans('cruds.exMember.fields.amount_words') }}</label>
                 <input class="form-control {{ $errors->has('amount_words') ? 'is-invalid' : '' }}" type="text" name="amount_words" id="amount_words" value="{{ old('amount_words', $exMember->amount_words) }}">
@@ -293,7 +293,7 @@ $(document).ready(function()
             
             ta_eli = Math.max(1000, total * 10);
             amount = ta_eli + 2500 ;
-            words = 'Rupees ' . price_in_words(amount) . ' Only'
+            words = 'Rupees ' + price_in_words(amount).trim() + ' Only'
         }
 
         $("#distance_total").val(total);

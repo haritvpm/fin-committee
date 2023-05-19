@@ -69,6 +69,17 @@ class ExMemberController extends Controller
 
         return view('admin.exMembers.show', compact('exMember'));
     }
+    public function paid(Request $request)
+    {
+       $exMember = ExMember::FindOrFail($request->id);
+       $exMember->update(
+        [ 'amount_paid' => true ]
+       );
+    
+     
+       return view('admin.exMembers.show', compact('exMember'));
+    
+    }
     public function print(Request $request)
     {
        $exMember = ExMember::FindOrFail($request->id);

@@ -3,16 +3,12 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.exMember.title') }}
+        <h2>  {{ $exMember->index }}. {{ $exMember->name }}</h2>
     </div>
 
     <div class="card-body">
         <div class="form-group">
-            <div class="form-group">
-                <a class="btn btn-default" href="{{ route('admin.ex-members.index') }}">
-                    {{ trans('global.back_to_list') }}
-                </a>
-            </div>
+          
             <table class="table table-bordered table-striped">
                 <tbody>
                    <!--  <tr>
@@ -28,9 +24,11 @@
                             {{ trans('cruds.exMember.fields.index') }}
                         </th>
                         <td>
-                            {{ $exMember->index }}
+                            {{ $exMember->index }} (<b>  {{ $exMember->user->name ?? '' }} </b>)
                         </td>
                     </tr>
+
+
                     <tr>
                         <th>
                             {{ trans('cruds.exMember.fields.name') }}
@@ -52,25 +50,11 @@
                             {{ trans('cruds.exMember.fields.place') }}
                         </th>
                         <td>
-                            {{ $exMember->place }}
+                            {{ $exMember->place }},  {{ $exMember->district }}
                         </td>
                     </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.exMember.fields.district') }}
-                        </th>
-                        <td>
-                            {{ $exMember->district }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.exMember.fields.user') }}
-                        </th>
-                        <td>
-                            {{ $exMember->user->name ?? '' }}
-                        </td>
-                    </tr>
+                  
+                    
                     <tr>
                         <th>
                             {{ trans('cruds.exMember.fields.distance_oneside') }}
@@ -138,20 +122,27 @@
 
                 </tbody>
             </table>
+
+                        
+           
             <div class="form-group">
             <a class="btn btn-default" href="{{ route('admin.ex-members.index') }}">
                     {{ trans('global.back_to_list') }}
                 </a>
-            @can('ex_member_edit')
-                                    <a class="btn btn-info" href="{{ route('admin.ex-members.edit', $exMember->id) }}">
+                @can('ex_member_edit')
+                  <a class="btn btn-info" href="{{ route('admin.ex-members.edit', $exMember->id) }}">
                                         {{ trans('global.edit') }}
-                                    </a>
-                                @endcan
+                   </a>
+                @endcan
              
                 @if ($exMember->amount_paid)
                 <a class="btn btn-primary"  target="_blank" href="{{ route('admin.ex-members.print', $exMember->id) }}">
                                         Print
-                                    </a>
+                </a>
+                @else
+                <a class="btn btn-danger" href="{{ route('admin.ex-members.paid', $exMember->id) }}">
+                                        Mark As Paid
+                   </a>
                 @endif
                 
             </div>
