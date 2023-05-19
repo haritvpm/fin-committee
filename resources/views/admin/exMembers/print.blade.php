@@ -37,7 +37,7 @@ body, table {
 
 </style>
 </head>
-<body onload="window.print()">
+<body onload="loadPrint()">
 <br>
 <h2 class="center"> <u> യാത്രാബത്തയ്ക്കുള്ള അപേക്ഷ</u></h2><br>
 
@@ -131,6 +131,12 @@ body, table {
 Received  ₹ {{ (int) $exMember->amount_payable}} /-  ({{ $exMember->amount_words}}) as TA and Honorarium.<br><br>
 
 Name and Signature of dignitary
-
 </body>
+<script>
+function loadPrint() {
+    window.print();
+    setTimeout(function () { window.close(); }, 100);
+}
+
+</script>
 </html

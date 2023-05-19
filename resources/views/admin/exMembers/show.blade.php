@@ -144,15 +144,15 @@
                    </a>
                 @endcan
              
-                @if ($exMember->amount_paid)
+               
                 <a class="btn btn-primary"  target="_blank" href="{{ route('admin.ex-members.print', $exMember->id) }}">
                                         Print
                 </a>
-                @else
+               
                 <a class="btn btn-danger" href="{{ route('admin.ex-members.paid', $exMember->id) }}">
                                         Mark As Paid
                    </a>
-                @endif
+               
                 
             </div>
         </div>
