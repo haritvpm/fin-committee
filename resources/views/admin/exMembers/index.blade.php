@@ -13,14 +13,11 @@
         </div>
     </div>
 @endcan
-<div class="card">
-    <div class="card-header">
-        {{ trans('cruds.exMember.title_singular') }} {{ trans('global.list') }}
-    </div>
 
-    <div class="card-body">
+
+
         <div class="table-responsive">
-            <table class="table table-bordered table-striped table-hover datatable datatable-ExMember">
+            <table class="table table-bordered table-striped  datatable datatable-ExMember">
                 <thead>
                     <tr>
                       <!--   <th width="10">
@@ -62,7 +59,7 @@
                         <th>
                             {{ trans('cruds.exMember.fields.amount_payable') }}
                         </th>
-                        <th>
+                        <th >
                             {{ trans('cruds.exMember.fields.amount_paid') }}
                         </th>
                         <th>
@@ -143,9 +140,7 @@
                     @endforeach
                 </tbody>
             </table>
-        </div>
-    </div>
-</div>
+        
 
 
 
@@ -163,7 +158,7 @@
   });
   let table = $('.datatable-ExMember:not(.ajaxTable)').DataTable({ buttons: dtButtons,  
     "columnDefs": [ {
-            "targets": [2,5,6,7,8,9],
+            "targets": [2,3,4,5,6,7,8,9],
             "searchable": false
             } ] })
 

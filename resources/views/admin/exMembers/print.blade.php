@@ -94,7 +94,7 @@ body, table {
         <td></td>
       </tr>
       <tr>
-        <td>Distance (Km)</td>
+        <td>Distance (KM)</td>
         
         <td  class="text-md-left">:  {{ $exMember->distance_total }}</td>
       </tr>
