@@ -46,7 +46,7 @@ class ExMemberController extends Controller
     {
         abort_if(Gate::denies('ex_member_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $users = User::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $users = User::where('name', 'LIKE','%ounter%')->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $exMember->load('user', 'created_by');
 
