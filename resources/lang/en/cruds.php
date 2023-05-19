@@ -90,6 +90,7 @@ return [
             'deleted_at'              => 'Deleted at',
             'deleted_at_helper'       => ' ',
             'distance_oneside'        => 'Distance OneWay',
+            'distance_total'        => 'Distance TwoWay',
             'distance_oneside_helper' => ' ',
             'ta_calculated'           => 'TA Calculated',
             'A_calculated_helper'    => ' ',

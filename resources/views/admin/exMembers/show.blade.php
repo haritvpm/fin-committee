@@ -4,6 +4,7 @@
 <div class="card">
     <div class="card-header">
         <h2>  {{ $exMember->index }}. {{ $exMember->name }}</h2>
+        <h3> {{ $exMember->place }},  {{ $exMember->district }}</h3>
     </div>
 
     <div class="card-body">
@@ -61,6 +62,14 @@
                         </th>
                         <td>
                             {{ $exMember->distance_oneside }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.exMember.fields.distance_total') }}
+                        </th>
+                        <td>
+                            {{ $exMember->distance_total }}
                         </td>
                     </tr>
                     <tr>

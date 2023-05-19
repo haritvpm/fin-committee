@@ -152,7 +152,7 @@
                 <div class="col">
                 <div class="form-group">
                 <label for="amount_payable">{{ trans('cruds.exMember.fields.amount_payable') }}</label>
-                <input class="form-control {{ $errors->has('amount_payable') ? 'is-invalid' : '' }}" type="number" name="amount_payable" id="amount_payable" value="{{ old('amount_payable', $exMember->amount_payable) }}" step="0.01">
+                <input class="form-control {{ $errors->has('amount_payable') ? 'is-invalid' : '' }}" type="number" name="amount_payable" id="amount_payable" value="{{ old('amount_payable', $exMember->amount_payable) }}" step="10">
                 @if($errors->has('amount_payable'))
                     <div class="invalid-feedback">
                         {{ $errors->first('amount_payable') }}
@@ -303,7 +303,17 @@ $(document).ready(function()
         $("#amount_words").val(words);
                                 
     }
+    function updateWords()
+    {        
+        var amount = parseFloat($("#amount_payable").val());
+        if( amount ) {
+           words = 'Rupees ' + price_in_words(amount).trim() + ' Only'
+        }
+        $("#amount_words").val(words);
+    }
+
     $(document).on("change, keyup", "#distance_oneside", updateFields);
+    $(document).on("keyup", "#amount_payable", updateWords);
 });
 
 </script>
