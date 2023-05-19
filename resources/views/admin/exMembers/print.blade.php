@@ -135,8 +135,12 @@ Name and Signature of dignitary
 <script>
 function loadPrint() {
     window.print();
-    setTimeout(function () { window.close(); }, 100);
+   // setTimeout(function () { window.close(); }, 500);
 }
+
+window.onafterprint = function(e){
+      window.close()
+    };
 
 </script>
 </html
