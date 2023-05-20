@@ -16,6 +16,7 @@
         "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.7",
         "nuovo/spreadsheet-reader": "^0.5.11",
+        "phpoffice/phpword": "^1.0",
         "yajra/laravel-datatables-oracle": "^9.19"
     },
     "require-dev": {

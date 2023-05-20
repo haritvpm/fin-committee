@@ -47,6 +47,13 @@ body, table {
   text-justify: inter-word;
 }
 
+footer{ 
+  font-size:14px;
+       position: fixed;     
+       text-align: center;    
+       bottom: 0px; 
+       width: 100%;
+   }  
 </style>
 </head>
 <body onload="loadPrint()">
@@ -140,6 +147,9 @@ body, table {
 Received  ₹ <b>{{ (int) $exMember->amount_payable}}</b>/-  ({{ $exMember->amount_words}}) as TA and Honorarium.<br><br>
 
 Name and Signature of dignitary
+<footer>
+  {{$exMember->index}}
+  </footer>
 </body>
 <script>
 function loadPrint() {

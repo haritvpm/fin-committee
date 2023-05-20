@@ -98,17 +98,18 @@ class ExMemberController extends Controller
     {
        $exMember = ExMember::FindOrFail($request->id);
        //copy the example doc file into your storage directory or corret this path
-       $local_template_file = 'ta_form.docx';
-
-       //define date to be replaced
-       $data = [
-           [
-               'name'     => 'Someone Other',
-            
-           ]
-       ];
-
+   
+       $my_template = new \PhpOffice\PhpWord\TemplateProcessor(storage_path('ta_form.docx'));
+       $my_template->setValue('name', 'hari');
        
+       $filename = 'taform' . $exMember->index . '.docx';
+       try{
+        $my_template->saveAs(storage_path(  $filename));
+        }catch (Exception $e){
+            //handle exception
+        }
+
+        return response()->download(storage_path( $filename))->deleteFileAfterSend(true);;       
 
 
     }
