@@ -26,8 +26,13 @@ class Allocation extends Model
         'updated_at',
         'deleted_at',
     ];
-    protected $appends = ['expenditure', 'mla_count', 'balance'];
+    protected $appends = ['expenditure', 'mla_count', 'balance', 'payable'];
 
+    public function getPayableAttribute()
+    {
+        $sum = ExMember::where( 'user_id', $this->user_id )->sum('amount_payable');
+        return $sum ;
+    }
     public function getExpenditureAttribute()
     {
         $sum = ExMember::where( 'user_id', $this->user_id )->where( 'amount_paid', '<>', 0 )->sum('amount_payable');

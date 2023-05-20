@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-@googlefonts('notosansmal')
+
   <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" /> 
 <style> 
 @font-face {
@@ -13,9 +13,20 @@
 html {
     font-size: 18px;
 } 
+body {
+ 
+  margin-left: 50px;
+  margin-right: 50px;
+}
 body, table {
-  font-size:18px;
+  font-size:20px;
   line-height: 1.2;
+ 
+}
+.table td.fit, 
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
 }
 
 .center{
@@ -30,6 +41,7 @@ body, table {
 }
 
 .just{
+  font-size:22px;
    line-height: 1.6;
   text-align: justify;
   text-justify: inter-word;
@@ -41,7 +53,7 @@ body, table {
 <br>
 <h4 class="center"> <u> യാത്രാബത്തയ്ക്കുള്ള അപേക്ഷ</u></h4><br>
 
-<table class="table table-borderless">
+<table class="table table-borderless table-sm">
     <tbody>
     <tr>
         <td>അപേക്ഷകന്റെ പേര് </td>
@@ -55,19 +67,16 @@ body, table {
       </tr>
       
       <tr>
-        <td>ബാങ്ക് അക്കൗണ്ട് നമ്പര്‍</td>
+        <td class='fit'>ബാങ്ക് അക്കൗണ്ട് നമ്പര്‍<br>
+        IFSC</td>
         <td>:</td>
         <td></td>
       </tr>
-      <tr>
-        <td>IFSC</td>
-        <td>:</td>
-        <td></td>
-      </tr>
+      
     </tbody>
   </table>
 
-<br><br>
+<br>
 <div class="just" >
 &emsp;കേരള നിയമസഭാ  മന്ദിരോദ്‌ഘാടനത്തിന്റെ  രജത ജൂബിലി    ആഘോഷങ്ങളുടെ  ഭാഗമായി 
 നിയമസഭാ മന്ദിരത്തിൽ  സംഘടിപ്പിക്കുന്ന പരിപാടിയിൽ (2023, മെയ് 22) പങ്കെടുക്കുന്നതിനായി 
@@ -85,7 +94,7 @@ body, table {
 <br>
 <div class="center"><b>For Office Use</b></div> <br>
 
-<table class="table table-borderless">
+<table class="table table-borderless table-sm">
     <tbody>
     <tr>
         <td width="30%">Journey From</td>
@@ -128,7 +137,7 @@ body, table {
 <span class="right" >Finance Officer</span></div>
 <hr>
 <br>
-Received  ₹ {{ (int) $exMember->amount_payable}} /-  ({{ $exMember->amount_words}}) as TA and Honorarium.<br><br>
+Received  ₹ <b>{{ (int) $exMember->amount_payable}}</b>/-  ({{ $exMember->amount_words}}) as TA and Honorarium.<br><br>
 
 Name and Signature of dignitary
 </body>

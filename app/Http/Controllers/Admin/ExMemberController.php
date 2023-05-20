@@ -94,4 +94,24 @@ class ExMemberController extends Controller
 
     //return $pdf->download('voucher.pdf');
     }
+    public function odt(Request $request)
+    {
+       $exMember = ExMember::FindOrFail($request->id);
+       //copy the example doc file into your storage directory or corret this path
+       $local_template_file = 'ta_form.docx';
+
+       //define date to be replaced
+       $data = [
+           [
+               'name'     => 'Someone Other',
+            
+           ]
+       ];
+
+       
+
+
+    }
+
+    
 }

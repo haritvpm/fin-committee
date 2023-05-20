@@ -32,6 +32,9 @@
                             {{ trans('cruds.allocation.fields.allotted_amount') }}
                         </th>
                         <th>
+                            Payable
+                        </th>
+                        <th>
                             Expenditure
                         </th>
                         <th>
@@ -58,16 +61,19 @@
                                 {{ $allocation->user->name ?? '' }}
                             </td>
                             <td>
-                                {{ $allocation->allotted_amount ?? '' }}
+                                {{ (int)$allocation->allotted_amount ?? '' }}
                             </td>
                             <td>
-                                {{ $allocation->expenditure ?? '' }}
+                                {{ (int)$allocation->payable ?? '' }}
                             </td>
                             <td>
-                                {{ $allocation->balance ?? '' }}
+                                {{ (int)$allocation->expenditure ?? '' }}
                             </td>
                             <td>
-                                {{ $allocation->mla_count ?? '' }}
+                                {{ (int)$allocation->balance ?? '' }}
+                            </td>
+                            <td>
+                                {{ (int)$allocation->mla_count ?? '' }}
                             </td>
                             <td>
                                 @can('allocation_show')
@@ -94,6 +100,18 @@
 
                         </tr>
                     @endforeach
+                    <td></td>
+                    <td>Total</td>
+                    <td></td>
+
+                    <td>{{$total_allotted_amount}}</td>
+                    <td>{{$total_payable}}</td>
+                    <td>{{$total_expenditure}}</td>
+                    <td>{{$total_balance}}</td>
+                    <td>{{$total_mla_count}}</td>
+                    <td></td>
+
+
                 </tbody>
             </table>
         </div>

@@ -19,8 +19,18 @@ class AllocationController extends Controller
         abort_if(Gate::denies('allocation_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $allocations = Allocation::with(['user'])->get();
+        
+        $total_allotted_amount = $allocations->sum('allotted_amount');
+        $total_payable = $allocations->sum('payable');
+        $total_expenditure = $allocations->sum('expenditure');
+        $total_mla_count = $allocations->sum('mla_count');
+        $total_balance = $allocations->sum('balance');
+       
+          
 
-        return view('admin.allocations.index', compact('allocations'));
+    
+        return view('admin.allocations.index', compact('allocations', 'total_allotted_amount',
+     'total_payable', 'total_expenditure', 'total_mla_count', 'total_balance'));
     }
 
     public function create()
