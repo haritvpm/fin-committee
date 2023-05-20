@@ -100,7 +100,15 @@ class ExMemberController extends Controller
        //copy the example doc file into your storage directory or corret this path
    
        $my_template = new \PhpOffice\PhpWord\TemplateProcessor(storage_path('ta_form.docx'));
-       $my_template->setValue('name', 'hari');
+       $my_template->setValue('name', $exMember->name);
+       $my_template->setValue('address', $exMember->address);
+       $my_template->setValue('place', $exMember->place);
+       $my_template->setValue('district', $exMember->district);
+       $my_template->setValue('kms', $exMember->distance_total);
+       $my_template->setValue('ta_eli', (int)$exMember->ta_eligible);
+       $my_template->setValue('honor', (int)$exMember->honorarium);
+       $my_template->setValue('total', (int)$exMember->amount_payable);
+       $my_template->setValue('total_words', $exMember->amount_words);
        
        $filename = 'taform' . $exMember->index . '.docx';
        try{

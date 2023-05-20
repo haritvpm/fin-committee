@@ -145,16 +145,19 @@
                 @endcan
              
                
-                <a class="btn btn-primary"  target="_blank" href="{{ route('admin.ex-members.print', $exMember->id) }}">
-                                        Print
-                </a>
-                <a class="btn btn-primary"  href="{{ route('admin.ex-members.odt', $exMember->id) }}">
-                                        Docx
-                </a>
+              
                 <a class="btn btn-danger" href="{{ route('admin.ex-members.paid', $exMember->id) }}">
                                         Mark As Paid
                    </a>
                
+                   <a class="btn btn-primary float-right"  target="_blank" href="{{ route('admin.ex-members.print', $exMember->id) }}">
+                                        Print
+                </a>
+               
+                   <a class="mr-1 btn btn-secondary float-right"  href="{{ route('admin.ex-members.odt', $exMember->id) }}">
+                                        Docx
+                </a>
+                 
                 
             </div>
         </div>
