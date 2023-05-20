@@ -94,17 +94,14 @@
                 <span class="help-block">{{ trans('cruds.exMember.fields.honorarium_helper') }}</span>
             </div>
             <div class="form-group">
-                <div class="form-check {{ $errors->has('amount_paid') ? 'is-invalid' : '' }}">
-                    <input type="hidden" name="amount_paid" value="0">
-                    <input class="form-check-input" type="checkbox" name="amount_paid" id="amount_paid" value="1" {{ old('amount_paid', 0) == 1 ? 'checked' : '' }}>
-                    <label class="form-check-label" for="amount_paid">{{ trans('cruds.exMember.fields.amount_paid') }}</label>
-                </div>
-                @if($errors->has('amount_paid'))
+                <label for="amount_words">{{ trans('cruds.exMember.fields.amount_words') }}</label>
+                <input class="form-control {{ $errors->has('amount_words') ? 'is-invalid' : '' }}" type="text" name="amount_words" id="amount_words" value="{{ old('amount_words', '') }}">
+                @if($errors->has('amount_words'))
                     <div class="invalid-feedback">
-                        {{ $errors->first('amount_paid') }}
+                        {{ $errors->first('amount_words') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.exMember.fields.amount_paid_helper') }}</span>
+                
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
